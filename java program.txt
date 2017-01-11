@@ -1,0 +1,47 @@
+1.java program to reverse the name string.
+
+
+public class reverse {
+	 static int i,c=0,res;
+	    
+	    static void stringreverse(String s)
+	    {
+	        char ch[]=new char[s.length()];
+	        for(i=0;i < s.length();i++)
+	        ch[i]=s.charAt(i);
+	        for(i=s.length()-1;i>=0;i--)
+	        System.out.print(ch[i]);
+	    }
+	    
+	    public static void main (String args[])
+	    {
+	        System.out.println("Original String is : ");
+	        System.out.println(" Ravinder Bhatia ");
+	        System.out.println("Reversed string is:");
+	        reverse.stringreverse(" Ravinder Bhatia");
+	    }
+	}
+==============================================================================================================
+2.Java program to replace the bad word with "*".
+
+package project1;
+
+public class filter
+{
+	 public static void main(String... args) 
+	 {
+	        String s = "sourav is stupid, nonsense and  rascal";
+	        System.out.println(s.replaceAll(badWords("stupid", "nonsense", "rascal"), "*"));
+	    }
+
+	    public static String badWords(String... words)
+	    {
+	        String re = "";
+	        for (String w : words)
+	            for (int i = 0; i < w.length(); i++)
+	                re += String.format("|((?<=%s)%s(?=%s))",
+	                        w.substring(0, i), w.charAt(i), w.substring(i + 1));
+	        return re.substring(1);
+	    }
+	}
+
